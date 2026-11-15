@@ -13,7 +13,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Build with Gradle
         run: gradle assembleDebug -Pandroid.injected.testOnly.enable=false
+        working-directory: Lazanya-afk
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: app/build/outputs/apk/**/*.apk
+          path: '**/build/outputs/apk/**/*.apk'
